@@ -61,7 +61,7 @@
 
 </style>
     <!-- Slide1 -->
-    <section>
+    <!--<section>
         <div class="pos-relative">
             <img src="https://storage.pixteller.com/designs/designs-images/2020-12-21/05/laptop-new-arrival-sales-banner-1-5fe0c47813869.png"  alt="IMG-BANNER" class="ban_img">
             
@@ -149,7 +149,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 
 	<!-- New Product -->
     
@@ -168,7 +168,7 @@
 			</div>
 
 			<!-- Slide2 -->
-			<div class="wrap-slick2" style="padding-top: 2%;">
+			<div class="wrap-slick2">
 				<div class="slick2">
 
 					{% for item in object_list %}
@@ -181,6 +181,16 @@
 								<a href="{{item.get_absolute_url}}">
 								<img src="{{ item.image.url }}" alt="IMG-PRODUCT" 
 								style="height: 370px; width:100%; "></a>
+							   
+
+								<!-- <div class="block2-overlay trans-0-4">
+									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+										<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
+										<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+									</a>
+	
+									
+								</div> -->
 							</div>
 							
 
