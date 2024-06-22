@@ -510,11 +510,11 @@
 
 			<!-- Custom JS to trigger modal -->
 			<script type="text/javascript">
-				{% if success %}
-					$(document).ready(function(){
+				$(document).ready(function() {
+					{% if success %}
 						$('#successModal').modal('show');
-					});
-				{% endif %}
+					{% endif %}
+				});
 			</script>
 		</div>
 	
