@@ -6,14 +6,16 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, get_object_or_404
+from django.urls import reverse
 from django.views.generic import ListView, DetailView, View
 from django.shortcuts import redirect
 from django.utils import timezone
 from .forms import CheckoutForm, CouponForm, RefundForm
-from .models import Item, OrderItem, Order, BillingAddress, Payment, Coupon, Refund, Category
-from django.http import HttpResponseRedirect
+from .models import Item, OrderItem, Order, BillingAddress, Payment, Coupon, Refund, Category , OrderItems
+from django.http import HttpResponseRedirect, JsonResponse
 #from django.shortcuts import render_to_response
 from django.shortcuts import render
+from newsletter.forms import SubscriberForm
 
 # Create your views here.
 import random
@@ -72,6 +74,23 @@ class PaymentView(View):
             messages.success(self.request, "Order was successful")
             return redirect("/")
         
+        except stripe.error.InvalidRequestError as e:
+            body = e.json_body
+            err = body.get('error', {})
+            return JsonResponse({
+                'status': e.http_status,
+                'type': err.get('type'),
+                'code': err.get('code'),
+                'message': err.get('message'),
+            }, status=400)
+        
+        
+        
+        
+        
+        
+        
+        '''
         except ObjectDoesNotExist:
             messages.error(self.request, "You do not have an active order")
             return redirect("/")
@@ -113,13 +132,31 @@ class PaymentView(View):
         except Exception as e:
             # send an email to ourselves
             messages.error(self.request, "Serious Error occured")
-            return redirect("/")
+            return redirect("/")'''
 
 
 class HomeView(ListView):
     template_name = "index.html"
     queryset = Item.objects.filter(is_active=True)
     context_object_name = 'items'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = SubscriberForm()
+        context['success'] = self.request.GET.get('success', False)
+        return context
+
+    def post(self, request, *args, **kwargs):
+        form = SubscriberForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(f"{reverse('core:home')}?success=True")
+        else:
+            # Ensure object_list is set
+            self.object_list = self.get_queryset()
+            context = self.get_context_data()
+            context['form'] = form
+            return self.render_to_response(context)
 
 
 class OrderSummaryView(LoginRequiredMixin, View):
@@ -393,3 +430,9 @@ class RequestRefundView(View):
             except ObjectDoesNotExist:
                 messages.info(self.request, "This order does not exist")
                 return redirect("core:request-refund")
+            
+@login_required
+def order_history(request):
+    orders = OrderItems.objects.filter(user=request.user)
+    print(orders)  # Debugging
+    return render(request, 'order_history.html', {'orders': orders})

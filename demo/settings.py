@@ -28,7 +28,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap4',
     'django_countries',
-    'core'
+    'core',
+    'newsletter'
 ]
 
 MIDDLEWARE = [
@@ -126,7 +127,7 @@ SOCIALACCOUNT_PROVIDERS = {
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-STRIPE_PUBLIC_KEY = 'pk_test_lX3r6OMjOU2yzFsNSHq6belT00EY82kZmH'
-STRIPE_SECRET_KEY = 'sk_test_tn0CTDaIJHUJyAqhsf39cfsC00LNjsqDnb'
+STRIPE_PUBLIC_KEY = 'pk_test_51PUEYaP1UqsLk64tVjpbji96Js579nEqyvKeGnsAxPtcA6HWi74ArNT7wMvoReCORZoE1bvCGpSwyU81OLBauhOL00rajmEjfQ'
+STRIPE_SECRET_KEY = 'sk_test_51PUEYaP1UqsLk64toKfXwYVvzjP3TPj6KEcGz6MpYczKV0cPeyNro9MYVrGb5BBCTis6KJLXr2Ospn1Ih96fUcAY00UpWxm6JK'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

@@ -1,8 +1,9 @@
-from django.urls import path
+from django.urls import include, path
 from .views import (
     ItemDetailView,
     HomeView,
     add_to_cart,
+    order_history,
     remove_from_cart,
     ShopView,
     OrderSummaryView,
@@ -29,5 +30,7 @@ urlpatterns = [
     path('remove-item-from-cart/<slug>/', remove_single_item_from_cart,
          name='remove-single-item-from-cart'),
     path('payment/<payment_option>/', PaymentView.as_view(), name='payment'),
-    path('request-refund/', RequestRefundView.as_view(), name='request-refund')
+    path('request-refund/', RequestRefundView.as_view(), name='request-refund'),
+    path('newsletter/', include('newsletter.urls')),
+    path('order-history/', order_history, name='order_history'),
 ]
