@@ -1,4 +1,5 @@
 #from urllib import request
+from audioop import avg
 from urllib import request
 from django.conf import settings
 from django.contrib import messages
@@ -11,7 +12,7 @@ from django.views.generic import ListView, DetailView, View
 from django.shortcuts import redirect
 from django.utils import timezone
 from .forms import CheckoutForm, CouponForm, RefundForm
-from .models import Item, OrderItem, Order, BillingAddress, Payment, Coupon, Refund, Category , OrderItems
+from .models import Item, OrderItem, Order, BillingAddress, Payment, Coupon, ProductReview, Refund, Category , OrderItems
 from django.http import HttpResponseRedirect, JsonResponse
 #from django.shortcuts import render_to_response
 from django.shortcuts import render
@@ -181,6 +182,20 @@ class ShopView(ListView):
 class ItemDetailView(DetailView):
     model = Item
     template_name = "product-detail.html"
+
+
+def product_detail(self, category_slug, slug):
+    product = get_object_or_404(Item, slug=slug)
+
+    if self.request.method == "POST" and self.request.user.is_authenticated:
+        stars = self.request.POST.get('stars', 3)
+        content = self.request.POST.get('content', '')
+
+        review = ProductReview.objects.create(product=product, user=self.request.user, stars=stars, content=content)
+
+        return redirect('product-detail', category_slug=category_slug, slug=slug)
+
+
 
 
 # class CategoryView(DetailView):

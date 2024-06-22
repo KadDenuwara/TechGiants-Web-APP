@@ -24,7 +24,13 @@ ADDRESS_CHOICES = (
     ('S', 'Shipping'),
 )
 
-
+RATING = (
+    (1,  "★☆☆☆☆"),
+    (2,  "★★☆☆☆"),
+    (3,  "★★★☆☆"),
+    (4,  "★★★★☆"),
+    (5,  "★★★★★"),
+)
 class Slide(models.Model):
     caption1 = models.CharField(max_length=100)
     caption2 = models.CharField(max_length=100)
@@ -81,6 +87,15 @@ class Item(models.Model):
         return reverse("core:remove-from-cart", kwargs={
             'slug': self.slug
         })
+
+class ProductReview(models.Model):
+    product = models.ForeignKey(Item, related_name="reviews", on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="reviews" ,on_delete=models.CASCADE)
+
+    content = models.TextField(blank=True, null=True)
+    stars = models.IntegerField()
+
+    date_added = models.DateTimeField(auto_now_add=True)
 
 
 class OrderItem(models.Model):
@@ -213,3 +228,4 @@ class OrderItems(models.Model):
 
     def __str__(self):
         return f'Order {self.id} by {self.user.username}'
+    
