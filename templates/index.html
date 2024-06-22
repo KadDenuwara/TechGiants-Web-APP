@@ -60,7 +60,6 @@
 
 
 </style>
-
     <!-- Slide1 -->
     <section>
         <div class="pos-relative">
@@ -151,79 +150,70 @@
 			</div>
 		</div>
 	</section>
+	<style>
+		.newproduct {
+			background: #fff;
+			padding-top: 45px;
+			padding-bottom: 105px;
+		}
+		.sec-title {
+			padding-bottom: 60px;
+		}
+		.m-text5 {
+			font-size: 24px;
+			text-align: center;
+		}
+		.wrap-slick2 {
+			margin: 0 auto;
+			max-width: 1200px;
+		}
+		.slick2 .item-slick2 {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		.block2 {
+			background: #f7f7f7;
+			border: 1px solid #ebebeb;
+			padding: 10px;
+			text-align: center;
+		}
+		.block2-img {
+			position: relative;
+			overflow: hidden;
+		}
+		.block2-img img {
+			height: 370px;
+			width: 100%;
+			object-fit: cover;
+		}
+		.block2-txt {
+			padding-top: 20px;
+		}
+		.block2-name {
+			display: block;
+			color: black;
+			padding-bottom: 5px;
+			font-size: 16px;
+		}
+		.block2-oldprice,
+		.block2-price,
+		.block2-newprice {
+			color: black;
+			margin-right: 5px;
+		}
+		.block2-oldprice {
+			text-decoration: line-through;
+		}
+	</style>
+    <section class="newproduct bgwhite p-t-45 p-b-105">
+        <div class="container">
+            <div class="sec-title p-b-60">
+                <h3 class="m-text5 t-center">
+                    Featured Products
+                </h3>
+            </div>
 
-	<!-- New Product -->
-    
-
-
-	
-		<style>
-			.newproduct {
-				background: #fff;
-				padding-top: 45px;
-				padding-bottom: 105px;
-			}
-			.sec-title {
-				padding-bottom: 60px;
-			}
-			.m-text5 {
-				font-size: 24px;
-				text-align: center;
-			}
-			.wrap-slick2 {
-				margin: 0 auto;
-				max-width: 1200px;
-			}
-			.slick2 .item-slick2 {
-				padding-left: 15px;
-				padding-right: 15px;
-			}
-			.block2 {
-				background: #f7f7f7;
-				border: 1px solid #ebebeb;
-				padding: 10px;
-				text-align: center;
-			}
-			.block2-img {
-				position: relative;
-				overflow: hidden;
-			}
-			.block2-img img {
-				height: 370px;
-				width: 100%;
-				object-fit: cover;
-			}
-			.block2-txt {
-				padding-top: 20px;
-			}
-			.block2-name {
-				display: block;
-				color: black;
-				padding-bottom: 5px;
-				font-size: 16px;
-			}
-			.block2-oldprice,
-			.block2-price,
-			.block2-newprice {
-				color: black;
-				margin-right: 5px;
-			}
-			.block2-oldprice {
-				text-decoration: line-through;
-			}
-		</style>
-	
-	
-	
-		<section class="newproduct bgwhite p-t-45 p-b-105">
-			<div class="container">
-				<div class="sec-title p-b-60">
-					<h3 class="m-text5 t-center">
-						Featured Products
-					</h3>
-				</div>
-	
-				<!-- Slide2 -->
+            <!-- Slide2 -->
 				<div class="wrap-slick2">
 					<div class="slick2">
 						<!-- Example product item -->
@@ -410,42 +400,41 @@
 						<!-- End Example product item -->
 						<!-- Add more product items as needed -->
 					</div>
-				</div>
-			</div>
-		</section>
+                </div>
+        </div>
+    </section>
 
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-		<script>
-			$(document).ready(function(){
-				$('.slick2').slick({
-					slidesToShow: 3,
-					slidesToScroll: 1,
-					autoplay: true,
-					autoplaySpeed: 2000,
-					dots: true,
-					arrows: false,
-					responsive: [
-						{
-							breakpoint: 1024,
-							settings: {
-								slidesToShow: 2,
-								slidesToScroll: 1
-							}
-						},
-						{
-							breakpoint: 600,
-							settings: {
-								slidesToShow: 1,
-								slidesToScroll: 1
-							}
-						}
-					]
-				});
-			});
-		</script>
-
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.slick2').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                dots: true,
+                arrows: false,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+	</section>
 		<section>
 			<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 			<style>
