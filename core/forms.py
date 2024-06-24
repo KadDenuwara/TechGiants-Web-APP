@@ -46,11 +46,6 @@ class RefundForm(forms.Form):
     }))
     email = forms.EmailField()
 
-'''class ProductReviewForm(forms.ModelForm):
-    class Meta:
-        model = ProductReview
-        fields = ['content', 'stars']
-'''
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review

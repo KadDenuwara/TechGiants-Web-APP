@@ -1,6 +1,9 @@
+from django import forms
 from django.contrib import admin
 
 from .models import Item, OrderItem, Order, Payment, Coupon, Refund, BillingAddress, Category, Slide, Review
+
+from ckeditor.widgets import CKEditorWidget
 
 
 # Register your models here.
@@ -70,6 +73,12 @@ def copy_items(modeladmin, request, queryset):
 
 copy_items.short_description = 'Copy Items'
 
+class ItemAdminForm(forms.ModelForm):
+    description_long = forms.CharField(widget=CKEditorWidget(config_name='default'))
+
+    class Meta:
+        model = Item
+        fields = '__all__'
 
 class ItemAdmin(admin.ModelAdmin):
     list_display = [
@@ -80,6 +89,7 @@ class ItemAdmin(admin.ModelAdmin):
     search_fields = ['title', 'category']
     prepopulated_fields = {"slug": ("title",)}
     actions = [copy_items]
+    form = ItemAdminForm
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = [

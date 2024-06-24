@@ -4,6 +4,7 @@ from django.db.models import Sum
 from django.shortcuts import reverse
 from django_countries.fields import CountryField
 from django.contrib.auth.models import User
+from django_ckeditor_5.fields import CKEditor5Field
 
 LABEL_CHOICES = (
     ('S', 'sale'),
@@ -58,7 +59,8 @@ class Item(models.Model):
     slug = models.SlugField()
     stock_no = models.CharField(max_length=10)
     description_short = models.CharField(max_length=50)
-    description_long = models.TextField()
+    #description_long = models.TextField()
+    description_long = CKEditor5Field(config_name='extends', null=True, blank=True)
     image = models.ImageField()
     is_active = models.BooleanField(default=True)
 
