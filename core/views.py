@@ -11,8 +11,8 @@ from django.urls import reverse
 from django.views.generic import ListView, DetailView, View
 from django.shortcuts import redirect
 from django.utils import timezone
-from .forms import CheckoutForm, CouponForm, RefundForm
-from .models import Item, OrderItem, Order, BillingAddress, Payment, Coupon, ProductReview, Refund, Category , OrderItems
+from .forms import CheckoutForm, CouponForm, RefundForm, ReviewForm
+from .models import Item, OrderItem, Order, BillingAddress, Payment, Coupon, Refund, Category , OrderItems , Review
 from django.http import HttpResponseRedirect, JsonResponse
 #from django.shortcuts import render_to_response
 from django.shortcuts import render
@@ -74,24 +74,7 @@ class PaymentView(View):
 
             messages.success(self.request, "Order was successful")
             return redirect("/")
-        
-        except stripe.error.InvalidRequestError as e:
-            body = e.json_body
-            err = body.get('error', {})
-            return JsonResponse({
-                'status': e.http_status,
-                'type': err.get('type'),
-                'code': err.get('code'),
-                'message': err.get('message'),
-            }, status=400)
-        
-        
-        
-        
-        
-        
-        
-        '''
+
         except ObjectDoesNotExist:
             messages.error(self.request, "You do not have an active order")
             return redirect("/")
@@ -133,7 +116,7 @@ class PaymentView(View):
         except Exception as e:
             # send an email to ourselves
             messages.error(self.request, "Serious Error occured")
-            return redirect("/")'''
+            return redirect("/")
 
 
 class HomeView(ListView):
@@ -178,29 +161,35 @@ class ShopView(ListView):
     paginate_by = 6
     template_name = "shop.html"
 
-
 class ItemDetailView(DetailView):
     model = Item
     template_name = "product-detail.html"
+    context_object_name = 'item'
 
+    def get_context_data(self, **kwargs):
+        try:
+            context = super().get_context_data(**kwargs)
+            context['reviews'] = self.object.reviews.all()
+            context['form'] = ReviewForm()
+            return context
+        except:
+            return redirect("/accounts/login/")
 
-def product_detail(self, category_slug, slug):
-    product = get_object_or_404(Item, slug=slug)
+    def post(self, request, *args, **kwargs):
+        try:
+            self.object = self.get_object()
+            form = ReviewForm(request.POST)
+            if form.is_valid():
+                review = form.save(commit=False)
+                review.item = self.object
+                review.user = request.user
+                review.save()
+                return redirect('core:product', slug=self.object.slug)
+            context = self.get_context_data(form=form)
+            return self.render_to_response(context)
+        except:
+            return redirect("/accounts/login/")
 
-    if self.request.method == "POST" and self.request.user.is_authenticated:
-        stars = self.request.POST.get('stars', 3)
-        content = self.request.POST.get('content', '')
-
-        review = ProductReview.objects.create(product=product, user=self.request.user, stars=stars, content=content)
-
-        return redirect('product-detail', category_slug=category_slug, slug=slug)
-
-
-
-
-# class CategoryView(DetailView):
-#     model = Category
-#     template_name = "category.html"
 
 class CategoryView(View):
     def get(self, *args, **kwargs):
@@ -231,6 +220,8 @@ class CheckoutView(View):
         except ObjectDoesNotExist:
             messages.info(self.request, "You do not have an active order")
             return redirect("core:checkout")
+        except:
+            return redirect("/checkout/")
 
     def post(self, *args, **kwargs):
         form = CheckoutForm(self.request.POST or None)
@@ -267,32 +258,14 @@ class CheckoutView(View):
                 else:
                     messages.warning(
                         self.request, "Invalid payment option select")
-                    return redirect('core:checkout')
+                    return redirect('/checkout/')
+            else:
+                return redirect('/checkout/')
         except ObjectDoesNotExist:
             messages.error(self.request, "You do not have an active order")
             return redirect("core:order-summary")
-
-
-# def home(request):
-#     context = {
-#         'items': Item.objects.all()
-#     }
-#     return render(request, "index.html", context)
-#
-#
-# def products(request):
-#     context = {
-#         'items': Item.objects.all()
-#     }
-#     return render(request, "product-detail.html", context)
-#
-#
-# def shop(request):
-#     context = {
-#         'items': Item.objects.all()
-#     }
-#     return render(request, "shop.html", context)
-
+        except:
+            return redirect('/checkout/')
 
 @login_required
 def add_to_cart(request, slug):
@@ -445,9 +418,9 @@ class RequestRefundView(View):
             except ObjectDoesNotExist:
                 messages.info(self.request, "This order does not exist")
                 return redirect("core:request-refund")
-            
+
 @login_required
-def order_history(request):
-    orders = OrderItems.objects.filter(user=request.user)
-    print(orders)  # Debugging
-    return render(request, 'order_history.html', {'orders': orders})
+def order_list_view(request):
+    orders = Order.objects.filter(user=request.user, ordered=True)
+    address = BillingAddress.objects.filter(user=request.user)
+    return render(request, 'orders/order_list.html', {'orders': orders, 'address': address})

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Item, OrderItem, Order, Payment, Coupon, ProductReview, Refund, BillingAddress, Category, Slide
+from .models import Item, OrderItem, Order, Payment, Coupon, Refund, BillingAddress, Category, Slide, Review
 
 
 # Register your models here.
@@ -13,22 +13,25 @@ def make_refund_accepted(modeladmin, request, queryset):
 make_refund_accepted.short_description = 'Update orders to refund granted'
 
 
+# Custom method to display detailed billing address
+def detailed_billing_address(obj):
+    if obj.billing_address:
+        return f"{obj.billing_address.street_address}, {obj.billing_address.apartment_address}, {obj.billing_address.country}, {obj.billing_address.zip}"
+    return "No billing address"
+
 class OrderAdmin(admin.ModelAdmin):
     list_display = ['user',
                     'ordered',
+                    detailed_billing_address,
                     'being_delivered',
                     'received',
                     'refund_requested',
                     'refund_granted',
-                    'shipping_address',
-                    'billing_address',
                     'payment',
-                    'coupon'
+                    'coupon',
                     ]
     list_display_links = [
         'user',
-        'shipping_address',
-        'billing_address',
         'payment',
         'coupon'
     ]
@@ -97,4 +100,4 @@ admin.site.register(Payment)
 admin.site.register(Coupon)
 admin.site.register(Refund)
 admin.site.register(BillingAddress, AddressAdmin)
-admin.site.register(ProductReview)
+admin.site.register(Review)

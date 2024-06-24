@@ -98,82 +98,158 @@
 		</div>
 	</div>
 
-	<div style="margin-left: 5%; margin-right: 5%; margin-top: -5%;">
-		<h2 >
-			Description
-		</h2>
-		<div style="margin: 3%; text-align: justify;">
-			<p style="color: black;">
-				{{ object.description_long }}
-			</p>
-		</div>
-	</div>
+	<section>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+		<style>
+			h2 {
+				border-bottom: 2px solid #f1f1f1;
+				padding-bottom: 10px;
+				color: #007BFF;
+			}
+			h4 {
+				border-bottom: 2px solid #f1f1f1;
+				padding-bottom: 10px;
+				color: #000a38;
+			}
+			.description {
+				margin: 20px 0;
+				text-align: justify;
+			}
+			.reviews {
+				margin: 20px 0;
+			}
+			.review {
+				border-bottom: 1px solid #f1f1f1;
+				padding: 10px 0;
+			}
+			.review p {
+				margin: 5px 0;
+			}
+			.review strong {
+				color: #007BFF;
+			}
+			.review small {
+				color: #999;
+			}
+			.review-form {
+				margin: 20px 0;
+			}
+			.review-form button {
+				background-color: #007BFF;
+				color: #fff;
+				border: none;
+				padding: 10px 20px;
+				cursor: pointer;
+				border-radius: 5px;
+			}
+			.review-form button:hover {
+				background-color: #0056b3;
+			}
+			.form-control {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+			}
 
-	<div style="margin-left: 5%; margin-right: 5%; margin-top: 2%;">
-		<h2>Reviews</h2>
-		<p>{{ review.content }}</p>
-		<div style="margin: 3%; text-align: justify;">
-			{% for review in Product.reviews.all %}
-				<div>
-					<p>
-						<strong>Date: </strong>{{ review.date_added|date:"Y-m-d"}},
-						<strong>Stars: </strong>{{ review.stars }}<br>
+			.form-control:focus {
+				border-color: #4CAF50;
+				outline: none;
+			}
+
+			textarea.form-control {
+				resize: vertical;
+			}
+
+			.star-rating .fa-star {
+				font-size: 2em;
+				color: gray;
+				cursor: pointer;
+			}
+
+			.star-rating .fa-star.checked {
+				color: orange;
+			}
+		</style>
+
+		<div class="container">
+			<div style="margin-top: -5%;">
+				<h2>Description</h2>
+				<div class="description">
+					<p style="color: black;">
+						{{ object.description_long }}
 					</p>
-
-					{{ review.content }}
 				</div>
-			{% empty %}
-				<div>
-					No reviews yet...
-				</div>
-			{% endfor %}
-		</div>
-		<!--div style="margin: 3%; text-align: justify;">
-			{% if request.user.is_authenticated %}
-			<form method="post" action=".">
-				{% csrf_token %}
+			</div>
 
-				<div>
-					<label>Stars</label>
+			<h2>Reviews</h2>
+			<div class="reviews">
+				{% for review in reviews %}
+					<div class="review">
+						{% if review.rating == 5 %}
+							<p><strong>{{ review.user.username }}</strong> rated it ★★★★★</p>
+						{% elif review.rating == 4 %}
+							<p><strong>{{ review.user.username }}</strong> rated it ★★★★☆</p>
+						{% elif review.rating == 3 %}
+							<p><strong>{{ review.user.username }}</strong> rated it ★★★☆☆</p>
+						{% elif review.rating == 2 %}
+							<p><strong>{{ review.user.username }}</strong> rated it ★★☆☆☆</p>
+						{% elif review.rating == 1 %}
+							<p><strong>{{ review.user.username }}</strong> rated it ★☆☆☆☆</p>
+						{% endif %}
+						<p>{{ review.comment }}</p>
+						<p><small>Posted on {{ review.created_at }}</small></p>
+						
+					</div>
+				{% endfor %}
+			</div>
 
-					<div>
+			<h4>Leave a Review</h4>
+			<div class="container">
+				<form method="post">
+					{% csrf_token %}
+					<div class="form-group star-rating">
 						<div>
-							<select name="stars">
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-							</select>
+							<i class="fa fa-star" data-rating="1"></i>
+							<i class="fa fa-star" data-rating="2"></i>
+							<i class="fa fa-star" data-rating="3"></i>
+							<i class="fa fa-star" data-rating="4"></i>
+							<i class="fa fa-star" data-rating="5"></i>
 						</div>
+						{{ form.rating }}
 					</div>
-				</div>
-
-				<div>
-					<label>Content</label>
-
-					<div>
-						<textarea name="content"></textarea>
+					<div class="form-group">
+						{{ form.comment.label_tag }}
+						{{ form.comment }}
 					</div>
-				</div>
-
-				<div>
-					<div>
-						<button class="button">Submit</button>
-					</div>
-				</div>
-
-			</form>
-			{% else %}
-			<p>Please sing in to add review!</p>
-			{% endif %}
-
-		</div-->
-
-
-	</div>
-
-
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+			</div>
+			<script>
+				document.addEventListener('DOMContentLoaded', function () {
+					const stars = document.querySelectorAll('.star-rating .fa-star');
+					const ratingInput = document.querySelector('input[name="rating"]');
+		
+					stars.forEach(star => {
+						star.addEventListener('click', function () {
+							const rating = this.getAttribute('data-rating');
+							ratingInput.value = rating;
+							stars.forEach(s => {
+								if (s.getAttribute('data-rating') <= rating) {
+									s.classList.add('checked');
+								} else {
+									s.classList.remove('checked');
+								}
+							});
+						});
+					});
+				});
+			</script>
+		</div>
+	</section>
 	<!-- Footer -->
 	<footer class="bg6 p-t-45 p-b-43 p-l-45 p-r-45">
 		<div class="flex-w p-b-90">

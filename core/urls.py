@@ -3,7 +3,6 @@ from .views import (
     ItemDetailView,
     HomeView,
     add_to_cart,
-    order_history,
     remove_from_cart,
     ShopView,
     OrderSummaryView,
@@ -12,7 +11,8 @@ from .views import (
     PaymentView,
     AddCouponView,
     RequestRefundView,
-    CategoryView
+    CategoryView,
+    order_list_view
 )
 
 app_name = 'core'
@@ -32,5 +32,5 @@ urlpatterns = [
     path('payment/<payment_option>/', PaymentView.as_view(), name='payment'),
     path('request-refund/', RequestRefundView.as_view(), name='request-refund'),
     path('newsletter/', include('newsletter.urls')),
-    path('order-history/', order_history, name='order_history'),
+    path('orders/', order_list_view, name='order-list'),
 ]

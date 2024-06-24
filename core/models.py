@@ -5,14 +5,6 @@ from django.shortcuts import reverse
 from django_countries.fields import CountryField
 from django.contrib.auth.models import User
 
-# Create your models here.
-CATEGORY_CHOICES = (
-    ('SB', 'Shirts And Blouses'),
-    ('TS', 'T-Shirts'),
-    ('SK', 'Skirts'),
-    ('HS', 'Hoodies&Sweatshirts')
-)
-
 LABEL_CHOICES = (
     ('S', 'sale'),
     ('N', 'new'),
@@ -74,29 +66,24 @@ class Item(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("core:product", kwargs={
-            'slug': self.slug
-        })
+        return reverse("core:product", kwargs={'slug': self.slug})
 
     def get_add_to_cart_url(self):
-        return reverse("core:add-to-cart", kwargs={
-            'slug': self.slug
-        })
+        return reverse("core:add-to-cart", kwargs={'slug': self.slug})
 
     def get_remove_from_cart_url(self):
-        return reverse("core:remove-from-cart", kwargs={
-            'slug': self.slug
-        })
+        return reverse("core:remove-from-cart", kwargs={'slug': self.slug})
 
-class ProductReview(models.Model):
-    product = models.ForeignKey(Item, related_name="reviews", on_delete=models.CASCADE)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="reviews" ,on_delete=models.CASCADE)
+class Review(models.Model):
+    item = models.ForeignKey(Item, related_name='reviews', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    rating = models.IntegerField(choices=[(i, i) for i in range(1, 6)])
+    #rating = models.IntegerField(choices=RATING)
+    comment = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
 
-    content = models.TextField(blank=True, null=True)
-    stars = models.IntegerField()
-
-    date_added = models.DateTimeField(auto_now_add=True)
-
+    def __str__(self):
+        return f"{self.user.username} - {self.item.title} - {self.rating}"
 
 class OrderItem(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
@@ -143,16 +130,6 @@ class Order(models.Model):
     received = models.BooleanField(default=False)
     refund_requested = models.BooleanField(default=False)
     refund_granted = models.BooleanField(default=False)
-
-    '''
-    1. Item added to cart
-    2. Adding a BillingAddress
-    (Failed Checkout)
-    3. Payment
-    4. Being delivered
-    5. Received
-    6. Refunds
-    '''
 
     def __str__(self):
         return self.user.username

@@ -2,7 +2,7 @@ from django import forms
 from django_countries.fields import CountryField
 from django_countries.widgets import CountrySelectWidget
 
-from core.models import ProductReview
+from core.models import Review
 
 PAYMENT_CHOICES = (
     ('S', 'Stripe'),
@@ -46,3 +46,24 @@ class RefundForm(forms.Form):
     }))
     email = forms.EmailField()
 
+'''class ProductReviewForm(forms.ModelForm):
+    class Meta:
+        model = ProductReview
+        fields = ['content', 'stars']
+'''
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ['rating', 'comment']
+        widgets = {
+            'rating': forms.HiddenInput(),
+            'comment': forms.Textarea(attrs={
+                'class': 'form-control',
+                'rows': 4,
+                'placeholder': 'Write your review here...'
+            }),
+        }
+        labels = {
+            'rating': 'Rating (1-5)',
+            'comment': 'Comment',
+        }     
