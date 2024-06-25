@@ -185,7 +185,7 @@
 				</div>
 			</div>
 
-			<h2>Reviews</h2>
+			<h2 style="margin-top: 10%;">Reviews</h2>
 			<div class="reviews">
 				{% for review in reviews %}
 					<div class="review">
@@ -207,7 +207,7 @@
 				{% endfor %}
 			</div>
 
-			<h4>Leave a Review</h4>
+			<h5>Leave a Review</h5>
 			<div class="container">
 				<form method="post">
 					{% csrf_token %}
@@ -225,7 +225,8 @@
 						{{ form.comment.label_tag }}
 						{{ form.comment }}
 					</div>
-					<button type="submit" class="btn btn-primary">Submit</button>
+					<button type="submit" class="btn btn-primary" style="margin-bottom: 5%;">Submit</button>
+					
 				</form>
 			</div>
 			<script>
@@ -260,44 +261,36 @@
 
 				<div>
 					<p class="s-text7 w-size27">
-						Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 00 000 123
+						Any questions? Let us know in store at Norrströmvägen 12B, 114 56 Stockholm, Sweden or call us on +46 8 123 4567
 					</p>
-
-					<div class="flex-m p-t-30">
-						<a href="#" class="fs-18 color1 p-r-20 fa fa-facebook"></a>
-						<a href="#" class="fs-18 color1 p-r-20 fa fa-instagram"></a>
-						<a href="#" class="fs-18 color1 p-r-20 fa fa-pinterest-p"></a>
-						<a href="#" class="fs-18 color1 p-r-20 fa fa-snapchat-ghost"></a>
-						<a href="#" class="fs-18 color1 p-r-20 fa fa-youtube-play"></a>
-					</div>
 				</div>
 			</div>
 
 		</div>
 
 		<div class="t-center p-l-15 p-r-15">
-			<a href="#">
+			<a href="https://www.paypal.com/" target="_blank">
 				<img class="h-size2" src="{% static 'images/icons/paypal.png' %}" alt="IMG-PAYPAL">
 			</a>
 
-			<a href="#">
+			<a href="https://www.visa.com" target="_blank">
 				<img class="h-size2" src="{% static 'images/icons/visa.png' %}" alt="IMG-VISA">
 			</a>
 
-			<a href="#">
+			<a href="https://www.mastercard.us" target="_blank">
 				<img class="h-size2" src="{% static 'images/icons/mastercard.png' %}" alt="IMG-MASTERCARD">
 			</a>
 
-			<a href="#">
+			<a href="https://www.express.com/" target="_blank">
 				<img class="h-size2" src="{% static 'images/icons/express.png' %}" alt="IMG-EXPRESS">
 			</a>
 
-			<a href="#">
+			<a href="https://www.discover.com/" target="_blank">
 				<img class="h-size2" src="{% static 'images/icons/discover.png' %}" alt="IMG-DISCOVER">
 			</a>
 
 			<div class="t-center s-text8 p-t-20">
-				Copyright © 2018 All rights reserved.
+				Copyright © 2024 All rights reserved.
 			</div>
 		</div>
 	</footer>

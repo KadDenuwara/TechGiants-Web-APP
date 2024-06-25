@@ -1,6 +1,5 @@
 from django.conf import settings
 from django.db import models
-from django.db.models import Sum
 from django.shortcuts import reverse
 from django_countries.fields import CountryField
 from django.contrib.auth.models import User
@@ -17,13 +16,6 @@ ADDRESS_CHOICES = (
     ('S', 'Shipping'),
 )
 
-RATING = (
-    (1,  "★☆☆☆☆"),
-    (2,  "★★☆☆☆"),
-    (3,  "★★★☆☆"),
-    (4,  "★★★★☆"),
-    (5,  "★★★★★"),
-)
 class Slide(models.Model):
     caption1 = models.CharField(max_length=100)
     caption2 = models.CharField(max_length=100)
@@ -179,16 +171,6 @@ class Coupon(models.Model):
 
     def __str__(self):
         return self.code
-
-
-class Refund(models.Model):
-    order = models.ForeignKey(Order, on_delete=models.CASCADE)
-    reason = models.TextField()
-    accepted = models.BooleanField(default=False)
-    email = models.EmailField()
-
-    def __str__(self):
-        return f"{self.pk}"
     
 
 class OrderItems(models.Model):

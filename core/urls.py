@@ -10,7 +10,6 @@ from .views import (
     CheckoutView,
     PaymentView,
     AddCouponView,
-    RequestRefundView,
     CategoryView,
     order_list_view
 )
@@ -30,7 +29,6 @@ urlpatterns = [
     path('remove-item-from-cart/<slug>/', remove_single_item_from_cart,
          name='remove-single-item-from-cart'),
     path('payment/<payment_option>/', PaymentView.as_view(), name='payment'),
-    path('request-refund/', RequestRefundView.as_view(), name='request-refund'),
     path('newsletter/', include('newsletter.urls')),
     path('orders/', order_list_view, name='order-list'),
 ]

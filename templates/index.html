@@ -4,9 +4,7 @@
 {% load slide_template_tags %}
 {% block content %}
 <style>
-	/*[ Block2 ]
-///////////////////////////////////////////////////////////
-*/
+
 .block2-labelpromotion::before,
 .block2-labelsale::before,
 .block2-labelnew::before 
@@ -57,25 +55,130 @@
     color: #000;
     border-color: #000;
 }
+.newproduct {
+	background: #fff;
+	padding-top: 45px;
+	padding-bottom: 105px;
+}
+.sec-title {
+	padding-bottom: 60px;
+}
+.m-text5 {
+	font-size: 24px;
+	text-align: center;
+}
+.wrap-slick2 {
+	margin: 0 auto;
+	max-width: 1200px;
+}
+.slick2 .item-slick2 {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.block2 {
+	background: #f7f7f7;
+	border: 1px solid #ebebeb;
+	padding: 10px;
+	text-align: center;
+}
+.block2-img {
+	position: relative;
+	overflow: hidden;
+}
+.block2-img img {
+	height: 370px;
+	width: 100%;
+	object-fit: cover;
+}
+.block2-txt {
+	padding-top: 20px;
+}
+.block2-name {
+	display: block;
+	color: black;
+	padding-bottom: 5px;
+	font-size: 16px;
+}
+.block2-oldprice,
+.block2-price,
+.block2-newprice {
+	color: black;
+	margin-right: 5px;
+}
+.block2-oldprice {
+	text-decoration: line-through;
+}
+.banner2{
+	background-color: #fff;
+	margin-right: 1rem;
+	margin-left: 1rem;
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+.ban_img{
+	height: 680px;
+	width: 100%;
+}
+.ban5_img{
+	height: 580px;
+	width: 100%;
+}
+
+.btn-light {
+	color: #000;
+	background-color: #fff;
+	border-color: #fff;
+	border-radius: 20px;
+}
+.wrap-btn-slide1 a:hover{
+	background-color: whitesmoke;
+	color: #000 !important;
+	opacity: 0.7;
+
+}
+.newsletter-section {
+	background: #f8f9fa;
+	padding: 50px 20px;
+	border-radius: 8px;
+	margin: 20px 0;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.newsletter-section img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+.newsletter-form {
+	max-width: 500px;
+	margin: 0 auto;
+}
+.newsletter-form button {
+	width: 100%;
+}
 
 
 </style>
-    <!-- Slide1 -->
+
     <section>
         <div class="pos-relative">
-            <img src="https://storage.pixteller.com/designs/designs-images/2020-12-21/05/laptop-new-arrival-sales-banner-1-5fe0c47813869.png"  alt="IMG-BANNER" class="ban_img">
+            <img src="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/12/apple-mouse-pros-and-cons.jpg?q=50&fit=contain&w=1140&h=&dpr=1.5"  alt="IMG-BANNER" class="ban_img">
             
             <div class="ab-t-l sizefull flex-col-c-m p-l-15 p-r-15">
                 <br><br><br><br><br>
+				<span class="m-text9 p-t-45 fs-20-sm">
+					A new Online Shop experience.
+				</span>
                 <br><br><br><br><br>
                 <br><br><br><br><br>
+				
                 <br>
-                    <div class="wrap-btn-slide1 w-size1 animated" data-appear="slideInUp">    
-            </div>
+                    
 
             </div>
         </div>
     </section>
+
 
     <section style="background-color: darkgray;">
 		<div class="">
@@ -113,6 +216,8 @@
 			</div>
 		</div>
 	</section>
+
+
     <section style="background-color: antiquewhite;">
 		<div class="">
 			<div class="row">
@@ -150,61 +255,7 @@
 			</div>
 		</div>
 	</section>
-	<style>
-		.newproduct {
-			background: #fff;
-			padding-top: 45px;
-			padding-bottom: 105px;
-		}
-		.sec-title {
-			padding-bottom: 60px;
-		}
-		.m-text5 {
-			font-size: 24px;
-			text-align: center;
-		}
-		.wrap-slick2 {
-			margin: 0 auto;
-			max-width: 1200px;
-		}
-		.slick2 .item-slick2 {
-			padding-left: 15px;
-			padding-right: 15px;
-		}
-		.block2 {
-			background: #f7f7f7;
-			border: 1px solid #ebebeb;
-			padding: 10px;
-			text-align: center;
-		}
-		.block2-img {
-			position: relative;
-			overflow: hidden;
-		}
-		.block2-img img {
-			height: 370px;
-			width: 100%;
-			object-fit: cover;
-		}
-		.block2-txt {
-			padding-top: 20px;
-		}
-		.block2-name {
-			display: block;
-			color: black;
-			padding-bottom: 5px;
-			font-size: 16px;
-		}
-		.block2-oldprice,
-		.block2-price,
-		.block2-newprice {
-			color: black;
-			margin-right: 5px;
-		}
-		.block2-oldprice {
-			text-decoration: line-through;
-		}
-	</style>
+
     <section class="newproduct bgwhite p-t-45 p-b-105">
         <div class="container">
             <div class="sec-title p-b-60">
@@ -213,10 +264,8 @@
                 </h3>
             </div>
 
-            <!-- Slide2 -->
 				<div class="wrap-slick2">
 					<div class="slick2">
-						<!-- Example product item -->
 						<div class="item-slick2 p-l-15 p-r-15">
 							<div class="block2">
 								<div class="block2-img wrap-pic-w of-hidden pos-relative block2-label">
@@ -375,8 +424,6 @@
         </div>
     </section>
 
-    <!--script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script-->
     <script>
         $(document).ready(function(){
             $('.slick2').slick({
@@ -405,44 +452,76 @@
             });
         });
     </script>
-	</section>
-		<section>
-			<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-			<style>
-				body {
-					font-family: Arial, sans-serif;
-				}
-				.newsletter-section {
-					background: #f8f9fa;
-					padding: 50px 20px;
-					border-radius: 8px;
-					margin: 20px 0;
-					box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-				}
-				.newsletter-section img {
-					max-width: 100%;
-					height: auto;
-					border-radius: 8px;
-				}
-				.newsletter-form {
-					max-width: 500px;
-					margin: 0 auto;
-				}
-				.newsletter-form button {
-					width: 100%;
-				}
-			</style>
-		</section>
-		<div style="background-color: antiquewhite;">
+
+	<section>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+		<div style="background-color: rgb(5, 5, 5);">
 			<div class="container" style="padding: 2%;">
 				<!-- Newsletter Signup Form -->
-				<div class="newsletter-section mt-5" style="background-color: aquamarine;">
+				<div class="newsletter-section mt-5" style="background-color: rgb(0, 0, 0);">
 					<div class="row">
 						<div class="col-md-6">
 							<img src="https://www.sender.net/wp-content/uploads/2021/03/email_newsletter_signup_forms_on_website.png" alt="Newsletter Image">
 						</div>
 						<div class="col-md-6">
-							<h2 class="mb-4">Signup for our Newsletter</h2>
+							<h2 style="color: white; margin-left: 12%;">Signup for our Newsletter</h2>
+							<br>
+							<style>
+								/* Add the CSS code here or link to your stylesheet */
+								/* Styling the form container */
+								.newsletter-form {
+									max-width: 400px;
+									margin: 0 auto;
+									padding: 20px;
+									background-color: #f8f9fa;
+									border-radius: 10px;
+									box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+								}
+						
+								/* Styling the form elements */
+								.newsletter-form input[type="email"],
+								.newsletter-form textarea {
+									width: 100%;
+									padding: 10px;
+									margin-bottom: 10px;
+									border: 1px solid #ced4da;
+									border-radius: 5px;
+								}
+						
+								/* Styling the submit button */
+								.newsletter-form .btn {
+									width: 100%;
+									padding: 10px;
+									background-color: #007bff;
+									border: none;
+									border-radius: 5px;
+									color: white;
+									font-size: 16px;
+									cursor: pointer;
+									transition: background-color 0.3s ease;
+								}
+						
+								.newsletter-form .btn:hover {
+									background-color: #0056b3;
+								}
+						
+								/* Adding some margin to form elements */
+								.newsletter-form .mt-2 {
+									margin-top: 10px;
+								}
+						
+								/* Styling the form labels */
+								.newsletter-form label {
+									font-weight: bold;
+									margin-bottom: 5px;
+									display: block;
+								}
+						
+								/* Adding some padding to the form */
+								.newsletter-form p {
+									margin-bottom: 10px;
+								}
+							</style>
 							<form method="post" action="{% url 'core:home' %}" class="newsletter-form">
 								{% csrf_token %}
 								{{ form.as_p }}
@@ -488,41 +567,9 @@
 				});
 			</script>
 		</div>
-	
-	<!-- ------------------Banner2  start ------------------------>
-	<style>
-		.banner2{
-			background-color: #fff;
-			margin-right: 1rem;
-			margin-left: 1rem;
-			margin-bottom: 0 !important;
-			padding-bottom: 0 !important;
-		}
+	</section>
 
-		.ban_img{
-			height: 680px;
-			width: 100%;
-		}
-		.ban5_img{
-			height: 580px;
-			width: 100%;
-		}
-
-		.btn-light {
-			color: #000;
-			background-color: #fff;
-			border-color: #fff;
-			border-radius: 20px;
-		}
-		.wrap-btn-slide1 a:hover{
-			background-color: whitesmoke;
-			color: #000 !important;
-			opacity: 0.7;
 	
-		}
-	</style>
-	
-	<!-- ------------------Banner2  start ------------------------>
     <div>
         <div>
             <img src="https://static.vecteezy.com/system/resources/previews/002/294/859/original/flash-sale-web-banner-design-e-commerce-online-shopping-header-or-footer-banner-free-vector.jpg"  alt="IMG-BANNER" style="width: 100%;">
@@ -548,7 +595,7 @@
 
 
 	<!-- Shipping -->
-	<section class="shipping bgwhite p-t-62 p-b-46">
+	<!--section class="shipping bgwhite p-t-62 p-b-46">
 		<div class="flex-w p-l-15 p-r-15">
 			<div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 respon1">
 				<h4 class="m-text12 t-center">
@@ -580,9 +627,14 @@
 				</span>
 			</div>
 		</div>
-	</section>
+	</section-->
+
+	<div>
+        <div>
+            <img src="{% static 'images\servicebanner.png' %}"  alt="IMG-BANNER" style="width: 100%;">
+        </div>
+    </div>
+
 
 	{% endblock content %}
-
-</body>
 	
