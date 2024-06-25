@@ -5,6 +5,7 @@
 
   {% block head_title %}{% endblock %}
   {% block extra_head %} {% endblock %}
+  <section>
   <style type="text/css">
     .form-control {
     display: block;
@@ -20,7 +21,7 @@
     border: 1px solid #ced4da !important;
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
+  }
   </style>
   <div class="animsition">
     {% include "nav.html"%}
@@ -58,4 +59,5 @@
     {% block extra_scripts %}
     {% endblock extra_scripts %}
   </div>
+</section>
 </html>
