@@ -1,5 +1,3 @@
 User-agent: *
-Disallow: /accounts/
-Disallow: /shop/
-Disallow: /product/
+Disallow: /
 Sitemap: https://dashboard.heroku.com/apps/techgiant/sitemap.xml
