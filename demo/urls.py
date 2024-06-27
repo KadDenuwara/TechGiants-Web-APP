@@ -10,6 +10,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('', include('core.urls', namespace='core')),
     path('newsletter/', include('newsletter.urls')),
+    path('', include('contact.urls')),
 ]
 
 

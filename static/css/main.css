@@ -567,7 +567,7 @@ iframe {
 
 .topbar-social-item {
   font-size: 18px;
-  color: #888888;
+  color: #ffffff;
   padding: 10px;
 }
 
@@ -672,10 +672,11 @@ iframe {
   color: #333333;
   padding: 0;
   border-bottom: 1px solid transparent;
+
 }
 
 li.sale-noti > a {
-  color: #e65540;
+  color: #333333;
 }
 
 .main_menu > li:hover > a {

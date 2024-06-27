@@ -32,7 +32,8 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'django_ckeditor_5',
     'core',
-    'newsletter'
+    'newsletter',
+    'contact'
 ]
 
 MIDDLEWARE = [
