@@ -107,7 +107,9 @@ Manages uploaded product artwork details such as titles, descriptions, images, a
 ## 5. Skeleton
 
 ### Wireframes
-[Add detailed wireframes here]
+
+#### Home Page
+![Picture1](https://github.com/KadDenuwara/TechGiants/assets/137709290/ffe9d906-f86b-4d36-85e6-96ad5faca71d)
 
 ---
 
