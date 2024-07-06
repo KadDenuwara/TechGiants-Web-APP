@@ -3,6 +3,8 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
+from contact import views
+
 
 
 urlpatterns = [
@@ -11,6 +13,7 @@ urlpatterns = [
     path('', include('core.urls', namespace='core')),
     path('newsletter/', include('newsletter.urls')),
     path('', include('contact.urls')),
+
 ]
 
 

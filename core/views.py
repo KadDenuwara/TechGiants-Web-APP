@@ -384,3 +384,16 @@ def order_list_view(request):
     orders = Order.objects.filter(user=request.user, ordered=True)
     address = BillingAddress.objects.filter(user=request.user)
     return render(request, 'orders/order_list.html', {'orders': orders, 'address': address})
+
+def search(request):
+    query = request.GET.get('q')
+    if query:
+        try:
+            item = Item.objects.get(title__iexact=query)
+            return redirect(item.get_absolute_url())
+        except Item.DoesNotExist:
+            results = Item.objects.filter(title__icontains=query)
+    else:
+        results = []
+    
+    return render(request, 'search_results.html', {'results': results})

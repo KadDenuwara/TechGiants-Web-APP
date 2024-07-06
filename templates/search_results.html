@@ -1,0 +1,70 @@
+<!-- core/templates/core/search_results.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <style>
+        .search-results-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px;
+            margin-bottom: 50px;
+        }
+        .search-results-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .search-results-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: box-shadow 0.3s;
+            text-decoration: none;
+        }
+        .search-results-item:hover {
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .search-results-image {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+        .search-results-details {
+            flex-grow: 1;
+        }
+        .search-results-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+            color: #333;
+        }
+        .search-results-price {
+            font-size: 16px;
+            color: #666;
+        }
+    </style>
+
+    <div class="search-results-container">
+        <h2>Search Results</h2>
+        {% if results %}
+            <ul class="search-results-list">
+                {% for item in results %}
+                    <li>
+                        <a href="{{ item.get_absolute_url }}" class="search-results-item">
+                            <img src="{{ item.image.url }}" alt="{{ item.title }}" class="search-results-image">
+                            <div class="search-results-details">
+                                <p class="search-results-title">{{ item.title }}</p>
+                                <p class="search-results-price">${{ item.price }}</p>
+                            </div>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No products found.</p>
+        {% endif %}
+    </div>
+{% endblock %}

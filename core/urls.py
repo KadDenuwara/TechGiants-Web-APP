@@ -11,7 +11,8 @@ from .views import (
     PaymentView,
     AddCouponView,
     CategoryView,
-    order_list_view
+    order_list_view,
+    search
 )
 
 app_name = 'core'
@@ -31,4 +32,5 @@ urlpatterns = [
     path('payment/<payment_option>/', PaymentView.as_view(), name='payment'),
     path('newsletter/', include('newsletter.urls')),
     path('orders/', order_list_view, name='order-list'),
+    path('search/', search, name='search'),
 ]
