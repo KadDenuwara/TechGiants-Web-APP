@@ -184,6 +184,7 @@ Manages uploaded product artwork details such as titles, descriptions, images, a
 
 #### W3C CSS Validator
 - My css passed as well when it came to testing as I was frequently testing it in the validator.
+
 ![Screenshot 2024-07-06 222140](https://github.com/KadDenuwara/TechGiants/assets/137709290/3edea770-bb77-465c-9ae3-92561ddf916b)
 
 ![Screenshot 2024-07-06 222208](https://github.com/KadDenuwara/TechGiants/assets/137709290/68ea245f-a459-4d50-88ba-136948557aca)
@@ -192,11 +193,31 @@ Manages uploaded product artwork details such as titles, descriptions, images, a
 
 #### CI Python checker
 - I checked all of my python files with the Code Institute python checker and recieved no issues with any of the files.
+
 ![Screenshot 2024-07-06 223131](https://github.com/KadDenuwara/TechGiants/assets/137709290/b4c8ec1a-eecb-40b5-81dc-eadb09d46d42)
 
 
 ### Responsiveness
-[Detail methods and tools used to ensure the website's responsiveness across various devices]
+
+The responsiveness of the design was manually checked using the Chrome Developer Tools for various screens.
+
+This included:
+
+- iPhone SE
+- Pixel 5
+- Samsung Galaxy S8, S20 Ultra
+- iPad Air and Mini
+- Galaxy Fold
+- Nest Hub and Hub Max
+  
+I also opted to use the responsiveness option and checked the screens at the following width sizes:
+
+- 350px
+- 768px
+- 992px
+- 1400px
+
+No issues arose, due to the simple layout of the site.
 
 ---
 
