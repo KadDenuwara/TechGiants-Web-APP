@@ -102,19 +102,28 @@ Manages uploaded product artwork details such as titles, descriptions, images, a
 ### Wireframes
 
 #### Home Page
-![Picture1](https://github.com/KadDenuwara/TechGiants/assets/137709290/ffe9d906-f86b-4d36-85e6-96ad5faca71d)
+
+![Screenshot 2024-07-07 003942](https://github.com/KadDenuwara/TechGiants/assets/137709290/9a7e1ecf-0ba9-4037-9fcd-ec8436ff29bd)
+
+![Screenshot 2024-07-07 004000](https://github.com/KadDenuwara/TechGiants/assets/137709290/773cdec3-93ab-4161-be7a-e128448e0755)
+
+![Screenshot 2024-07-07 004031](https://github.com/KadDenuwara/TechGiants/assets/137709290/42c0b951-cdb4-4484-8e0d-6b8f15956dd0)
 
 #### Product Page
-![Picture2](https://github.com/KadDenuwara/TechGiants/assets/137709290/8a0c2591-edb2-47f7-8def-05e2aa5faa26)
+
+![Screenshot 2024-07-07 004059](https://github.com/KadDenuwara/TechGiants/assets/137709290/e5ca6c81-0b9b-4ad4-93fa-e661a93b2f32)
 
 #### SignIn Page
-![Picture6](https://github.com/KadDenuwara/TechGiants/assets/137709290/cc5abfe2-2e60-42a5-9a47-221891f026c6)
+
+![Screenshot 2024-07-07 004226](https://github.com/KadDenuwara/TechGiants/assets/137709290/e2959288-72d7-4816-86bb-923e785ab9eb)
 
 #### SignUp Page
-![Picture7](https://github.com/KadDenuwara/TechGiants/assets/137709290/c1bf33f6-46ba-44e9-969c-20a30e74ba79)
+
+![Screenshot 2024-07-07 004238](https://github.com/KadDenuwara/TechGiants/assets/137709290/473ca701-837a-4eec-a5dd-524f2f93aea9)
 
 #### ContactUs Page  
-![Picture5](https://github.com/KadDenuwara/TechGiants/assets/137709290/a2451015-6ad7-49f0-aba5-923329bbf0df)
+
+![Screenshot 2024-07-07 004157](https://github.com/KadDenuwara/TechGiants/assets/137709290/f28f3342-bc8c-4d6d-9c49-d0beea04099a)
 
 ---
 
