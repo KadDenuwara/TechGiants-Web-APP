@@ -111,6 +111,18 @@ Manages uploaded product artwork details such as titles, descriptions, images, a
 #### Home Page
 ![Picture1](https://github.com/KadDenuwara/TechGiants/assets/137709290/ffe9d906-f86b-4d36-85e6-96ad5faca71d)
 
+#### Product Page
+![Picture2](https://github.com/KadDenuwara/TechGiants/assets/137709290/8a0c2591-edb2-47f7-8def-05e2aa5faa26)
+
+#### SignIn Page
+![Picture6](https://github.com/KadDenuwara/TechGiants/assets/137709290/cc5abfe2-2e60-42a5-9a47-221891f026c6)
+
+#### SignUp Page
+![Picture7](https://github.com/KadDenuwara/TechGiants/assets/137709290/c1bf33f6-46ba-44e9-969c-20a30e74ba79)
+
+#### ContactUs Page  
+![Picture5](https://github.com/KadDenuwara/TechGiants/assets/137709290/a2451015-6ad7-49f0-aba5-923329bbf0df)
+
 ---
 
 ## 6. Features
