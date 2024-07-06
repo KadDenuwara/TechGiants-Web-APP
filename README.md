@@ -18,10 +18,7 @@
    - [Upload](#upload)
 5. [Skeleton](#5-skeleton)
    - [Wireframes](#wireframes)
-6. [Surface](#6-surface)
-   - [Font](#font)
-   - [Colors](#colors)
-7. [Features](#7-features)
+6. [Features](#6-features)
    - [Existing Features](#existing-features)
      - [Home](#home)
      - [Profile page](#profile-page)
@@ -32,22 +29,22 @@
      - [Comments](#comments)
      - [Delete / Edit posts](#delete--edit-posts)
      - [Random post](#random-post)
-8. [Technologies Used](#8-technologies-used)
+7. [Technologies Used](#7-technologies-used)
    - [Languages](#languages)
    - [Tools](#tools)
    - [Styling](#styling)
-9. [Validation](#9-validation)
+8. [Validation](#8-validation)
    - [Code Validation](#code-validation)
    - [Responsiveness](#responsiveness)
-10. [Bugs](#10-bugs)
+9. [Bugs](#9-bugs)
    - [Specific Bugs](#specific-bugs)
    - [Known Bugs](#known-bugs)
-11. [Deployment](#11-deployment)
+10. [Deployment](#10-deployment)
    - [Create Application](#create-application)
    - [ElephantSQL](#elephantsql)
    - [Cloudinary](#cloudinary)
    - [Final Repo Preparations](#final-repo-preparations)
-12. [Credits](#12-credits)
+11. [Credits](#11-credits)
    - [For Code Help and Advice](#for-code-help-and-advice)
    - [Helpful Resources](#helpful-resources)
    - [For Content and Code](#for-content-and-code)
@@ -114,17 +111,7 @@ Manages uploaded product artwork details such as titles, descriptions, images, a
 
 ---
 
-## 6. Surface
-
-### Font
-[Specify font details used throughout the website]
-
-### Colors
-[Describe the color scheme used for consistent branding and aesthetics]
-
----
-
-## 7. Features
+## 6. Features
 
 ### Existing Features
 
@@ -157,7 +144,7 @@ Manages uploaded product artwork details such as titles, descriptions, images, a
 
 ---
 
-## 8. Technologies Used
+## 7. Technologies Used
 
 ### Languages
 - **HTML**: Used for creating structured Django templates.
@@ -177,7 +164,7 @@ Manages uploaded product artwork details such as titles, descriptions, images, a
 
 ---
 
-## 9. Validation
+## 8. Validation
 
 ### Code Validation
 [Describe tools and processes used for ensuring code quality and standards]
@@ -187,13 +174,13 @@ Manages uploaded product artwork details such as titles, descriptions, images, a
 
 ---
 
-## 10. Bugs
+## 9. Bugs
 
 [Document specific bugs encountered during development and their resolutions]
 
 ---
 
-## 11. Deployment
+## 10. Deployment
 
 ### Create Application
 [Outline steps taken to create and configure the application for deployment]
@@ -209,7 +196,7 @@ Manages uploaded product artwork details such as titles, descriptions, images, a
 
 ---
 
-## 12. Credits
+## 11. Credits
 
 ### For Code Help and Advice
 [Recognize individuals or resources that provided assistance during development]
