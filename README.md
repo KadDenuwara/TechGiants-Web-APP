@@ -95,7 +95,7 @@ The project is meticulously structured to ensure efficient development and user 
 Captures user-generated content including product titles, user-friendly URLs (slugs), author details, product descriptions, uploaded images, and user reviews for products.
 
 ### Upload
-Manages uploaded product artwork details such as titles, descriptions, images, and pricing information.
+Manages uploaded product details such as titles, descriptions, images, and pricing information.
 
 ---
 
