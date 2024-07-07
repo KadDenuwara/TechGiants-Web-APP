@@ -47,6 +47,8 @@
 ## 1. Introduction
 The Django E-Commerce project is an advanced online platform designed for purchasing laptops and phones. It offers a robust e-commerce experience where users can browse products, securely place orders using Stripe, and provide feedback through product reviews.
 
+![Screenshot 2024-07-01 133047](https://github.com/KadDenuwara/TechGiants/assets/137709290/10656f03-4382-4f8c-95f0-886aa84f68d3)
+
 ## 2. User Experience
 
 ### 2.1 Strategy
