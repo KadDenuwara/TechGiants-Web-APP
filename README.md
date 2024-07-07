@@ -256,7 +256,9 @@ No issues arose, due to the simple layout of the site.
 
 Stay updated with our latest news and offers by following us on Facebook.
 
-[![Facebook Page](https://github.com/KadDenuwara/TechGiants/assets/137709290/a20e2e8c-66f4-441d-9522-637bdddf7ac5)](https://www.facebook.com/profile.php?id=61561756724837&sk=photos)
+<a href="https://www.facebook.com/profile.php?id=61561756724837&sk=photos" target="_blank">
+  <img src="https://github.com/KadDenuwara/TechGiants/assets/137709290/a20e2e8c-66f4-441d-9522-637bdddf7ac5" alt="Facebook Page">
+</a>
 
 Click the image above to visit our Facebook page.
 
