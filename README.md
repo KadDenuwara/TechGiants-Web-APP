@@ -252,3 +252,16 @@ No issues arose, due to the simple layout of the site.
 ## 11. Credits
 
 
+# Welcome to My Shop
+
+This is a website for selling laptops and phones. Check out our amazing products!
+
+## Follow Us on Facebook
+
+Stay updated with our latest news and offers by following us on Facebook.
+
+[![Screenshot 2024-07-07 074714]([https://github.com/yourusername/yourrepo/blob/main/images/facebook_page_image.jpg](https://github.com/KadDenuwara/TechGiants/assets/137709290/a20e2e8c-66f4-441d-9522-637bdddf7ac5))](https://www.facebook.com/profile.php?id=61561756724837&sk=photos)
+
+Click the image above to visit our Facebook page.
+
+
