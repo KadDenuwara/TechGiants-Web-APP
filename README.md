@@ -251,6 +251,11 @@ No issues arose, due to the simple layout of the site.
 
 ## 11. Credits
 
+- [Stack Overflow](https://stackoverflow.com) provided valuable assistance with problem-solving.
+- [MDN Web Docs](https://developer.mozilla.org) contained a wealth of useful information for building the project.
+- [W3Schools](https://www.w3schools.com) always has very helpful tutorials and references on various coding topics.
+- [GitHub](https://github.com) offered numerous repositories that significantly aided in coding.
+- [GeeksforGeeks](https://www.geeksforgeeks.org) had extensive information on Python and other programming languages.
 
 ## Follow Us on Facebook
 
