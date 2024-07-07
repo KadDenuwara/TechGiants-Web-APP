@@ -27,8 +27,7 @@
      - [Nav bar](#nav-bar)
      - [Post detail](#post-detail)
      - [Comments](#comments)
-     - [Delete / Edit posts](#delete--edit-posts)
-     - [Random post](#random-post)
+     - [Delete / Edit comments](#delete--edit-comments)
 7. [Technologies Used](#7-technologies-used)
    - [Languages](#languages)
    - [Tools](#tools)
@@ -154,11 +153,9 @@ Manages uploaded product details such as titles, descriptions, images, and prici
 #### Comments
 - Enables users to leave feedback and engage in discussions about products through interactive commenting features.
 
-#### Delete / Edit posts
-- Allows users to manage their listings by editing product details or removing items no longer for sale.
+#### Delete / Edit comments
+- Allows users to manage their reviews by editing or removing.
 
-#### Random post
-- Enhances user engagement with a feature that presents random products to encourage exploration and discovery.
 
 ---
 
