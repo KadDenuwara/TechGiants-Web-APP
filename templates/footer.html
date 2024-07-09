@@ -1,0 +1,122 @@
+{% load static %}
+<!-- ------------------------------footer sub end---------------------------------- -->
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css?family=Abel|Lato|Open+Sans&display=swap" rel="stylesheet">
+<style>
+    /* Fonts */
+    body, html {
+        font-family: 'Lato', sans-serif;
+        line-height: 1.6;
+    }
+    
+    /* Footer Styles */
+    #footer-main {
+        background: #000;
+        color: white;
+        font-size: 14px;
+        padding: 40px 0;
+    }
+    
+    #footer-main a {
+        color: grey;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    
+    #footer-main a:hover {
+        color: white;
+    }
+    
+    #footer-main h5 {
+        font-weight: bold;
+        color: white;
+        margin-bottom: 20px;
+    }
+    
+    #footer-main h6 {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    
+    #footer-main hr {
+        border-top: 1px solid white;
+        margin: 20px 0;
+    }
+    
+    .social-icons a {
+        color: white;
+        text-decoration: none;
+        margin-right: 15px;
+        transition: color 0.3s;
+    }
+    
+    .social-icons a:hover {
+        color: #1e90ff; /* Change to your preferred hover color */
+    }
+    
+    .footer-links {
+        margin-top: 10px;
+    }
+    
+    .footer-links a {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    .footer-info {
+        color: grey;
+    }
+    
+    .footer-info p {
+        margin-bottom: 10px;
+    }
+</style>
+
+<footer id="footer-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <a href="/" style="text-decoration: none;"><h5>Tech Giants</h5></a>
+                <p class="footer-info">Your trusted source for the latest tech gadgets.</p>
+                <div class="social-icons">
+                    <a href="https://web.facebook.com/" target="_blank"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="https://x.com/" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube fa-lg"></i></a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <h6>Quick Links</h6>
+                <div class="footer-links">
+                    <a href="/shop/">Shop</a>
+                    <a href="/shop/">Categories</a>
+                    <a href="/contact/">Contact Us</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <h6>Account</h6>
+                <div class="footer-links">
+                    <a href="{% url 'account_signup' %}">Sign Up</a>
+                    <a href="/accounts/login/">Sign In</a>
+                    <a href="/orders/">Orders</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <h6>Contact Us</h6>
+                <div class="footer-info">
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Tech City</p>
+                    <p><i class="fas fa-envelope"></i> info@techgiants.com</p>
+                    <p><i class="fas fa-phone"></i> +123 456 7890</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <p class="footer-info">&copy; 2017-2019 Tech Giants. All rights reserved.</p>
+            </div>
+        
+        </div>
+    </div>
+</footer>
+<!-- ------------------------------footer end---------------------------------- -->

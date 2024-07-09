@@ -1,0 +1,353 @@
+{% load static %}
+{% load cart_template_tags %}
+{% load category_template_tags %}
+
+<style>
+	.topbar {
+		background-color: rgb(173, 20, 243);
+		color: black !important;
+	}
+	.topbar a:hover{
+		color: black;
+	}
+
+	li a:hover {
+		color: rgb(0, 0, 0); /* Color when hovered */
+		text-decoration: none; /* Underline when hovered */
+	}
+</style>
+<!-- Header -->
+<header class="header1">
+		<!-- Header desktop -->
+		<div class="container-menu-header">
+			<div class="topbar">
+				<div class="topbar-social">
+					<a href="https://web.facebook.com/" target="_blank" class="topbar-social-item fab fa-facebook"></a>
+					<a href="https://www.instagram.com/" target="_blank" class="topbar-social-item fab fa-instagram"></a>
+					<a href="https://x.com/" target="_blank" class="topbar-social-item fab fa-twitter"></a>
+					<a href="https://www.youtube.com/" target="_blank" class="topbar-social-item fab fa-youtube"></a>
+				</div>
+
+				<span class="topbar-child1" style="color: white; font-weight: bold;">
+					Free shipping for standard order over $1599.99
+				</span>
+
+				
+
+				
+			</div>
+
+			<div class="wrap_header">
+				<!-- Logo -->
+				<a href="/" class="logo" style="color: black; text-decoration: none;">
+					<p style="color: black; "><b style="font-size: 22px;">Tech Giants</b>
+				</a>
+
+				
+
+				<!-- Menu -->
+				<div class="wrap_menu">
+					<nav class="menu">
+						<ul class="main_menu">
+							
+							<li>
+								<a href="/" style="
+								display: inline-block;
+								padding: 5px 20px;
+								border: 0px solid black;
+								border-radius: 0px;
+								color: black;
+								text-decoration: none;
+								background-color: white;
+								transition: background-color 0.3s, color 0.3s;
+							" onmouseover="this.style.backgroundColor='black'; this.style.color='white';" onmouseout="this.style.backgroundColor='white'; this.style.color='black';">Home</a>
+
+							</li>
+
+							<li>
+								<a href="/shop/" style="
+								display: inline-block;
+								padding: 5px 20px;
+								border: 0px solid black;
+								border-radius: 0px;
+								color: black;
+								text-decoration: none;
+								background-color: white;
+								transition: background-color 0.3s, color 0.3s;
+							" onmouseover="this.style.backgroundColor='black'; this.style.color='white';" onmouseout="this.style.backgroundColor='white'; this.style.color='black';">Shop</a>
+							</li>
+
+
+							<!--{% categories %}-->
+							<li>
+								<a href="#" style="
+								display: inline-block;
+								padding: 5px 20px;
+								border: 0px solid black;
+								border-radius: 0px;
+								color: black;
+								text-decoration: none;
+								background-color: white;
+								transition: background-color 0.3s, color 0.3s;
+							" onmouseover="this.style.backgroundColor='black'; this.style.color='white';" onmouseout="this.style.backgroundColor='white'; this.style.color='black';">Categories</a>
+								<ul class="sub_menu">
+									<li><a href="/category/phone/">Phones</a></li>
+									<li><a href="/category/laptop/">Laptops</a></li>
+								</ul>
+							</li>
+
+							
+
+
+							<li>
+								<a href="/contact/" style="
+								display: inline-block;
+								padding: 5px 20px;
+								border: 0px solid black;
+								border-radius: 0px;
+								color: black;
+								text-decoration: none;
+								background-color: white;
+								transition: background-color 0.3s, color 0.3s;
+							" onmouseover="this.style.backgroundColor='black'; this.style.color='white';" onmouseout="this.style.backgroundColor='white'; this.style.color='black';">Contact</a>
+							</li>
+
+							 {% if request.user.is_authenticated %}
+
+							<li>
+								<!--div class="header-wrapicon2">
+									<a href="/orders/">
+										<img src="{% static '\images\icons\icon-header-02.jpg' %}" class="header-icon1 js-show-header-dropdown" height="100%" alt="ICON">
+									</a>
+								</div-->
+
+								<a href="/orders/" style="
+								display: inline-block;
+								padding: 5px 20px;
+								border: 0px solid black;
+								border-radius: 0px;
+								color: black;
+								text-decoration: none;
+								background-color: white;
+								transition: background-color 0.3s, color 0.3s;
+							" onmouseover="this.style.backgroundColor='black'; this.style.color='white';" onmouseout="this.style.backgroundColor='white'; this.style.color='black';">Orders</a>
+							</li>
+							
+							<li>
+								<div class="header-wrapicon2">
+								<a href="{% url 'core:order-summary' %}">
+									
+									<img src="{% static 'images\icons\cart.jpg' %}" class="header-icon1 js-show-header-dropdown" height="100%" alt="ICON">
+						<span class="header-icons-noti">{{ request.user|cart_item_count }}</span>
+									</a>
+								</div>
+							</li>
+
+							<li>
+								<a href="{% url 'account_logout' %}" style="
+								display: inline-block;
+								padding: 5px 20px;
+								border: 0px solid black;
+								border-radius: 0px;
+								color: black;
+								text-decoration: none;
+								background-color: white;
+								transition: background-color 0.3s, color 0.3s;
+							" onmouseover="this.style.backgroundColor='black'; this.style.color='white';" onmouseout="this.style.backgroundColor='white'; this.style.color='black';">Logout</a>
+							</li>
+							{% else %}
+							<li>
+								<a href="#" style="
+								display: inline-block;
+								padding: 5px 20px;
+								border: 0px solid black;
+								border-radius: 0px;
+								color: black;
+								text-decoration: none;
+								background-color: white;
+								transition: background-color 0.3s, color 0.3s;
+							" onmouseover="this.style.backgroundColor='black'; this.style.color='white';" onmouseout="this.style.backgroundColor='white'; this.style.color='black';">Login</a>
+								<ul class="sub_menu">
+									<li><a href="{% url 'account_login' %}">Login</a></li>
+									<li><a href="{% url 'account_signup' %}">SignUp</a></li>
+								</ul>
+							</li>
+							{% endif %} 
+						</ul>
+					</nav>
+				</div>
+
+				<!-- Icons -->
+				<div class="d-flex align-items-center ml-5">
+					<a href="#" class="icon-link search-icon mr-3 text-dark">
+						<i class="fa fa-search"></i>
+					</a>
+					<div class="search-form">
+						<form method="GET" action="{% url 'core:search' %}">
+							<input type="text" name="q" placeholder="Search for products...">
+							<button type="submit">Search</button>
+						</form>
+					</div>
+					<a href="#" class="icon-link mr-3 text-dark">
+						<i class="fa fa-heart"></i>
+					</a>
+					<a href="#" class="icon-link mr-3 text-dark">
+						<i class="fa fa-shopping-cart"></i>
+						
+					</a>
+					<div class="ml-4">
+
+					
+					{% if request.user.is_authenticated %}
+					
+					
+					{% else %}
+					
+					<a href="{% url 'account_signup' %}" class=" ml-3" style="background-color:black;padding: 9px 20px;color:white;">Sign Up</a>
+					{% endif %}
+				</div>
+				</div>
+
+				<style>
+					/* Your existing styles */
+					.search-form {
+						display: none;
+						position: absolute;
+						top: 100%;
+						left: 0;
+						background-color: #fff;
+						padding: 10px;
+						box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+					}
+					
+					.search-form input[type="text"],
+					.search-form button {
+						margin-right: 5px;
+					}
+					
+					</style>
+					
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+					<script>
+					$(document).ready(function() {
+						$('.search-icon').click(function(e) {
+							e.preventDefault();
+							$('.search-form').slideToggle('fast');
+						});
+					});
+					</script>
+				
+			</div>
+		</div>
+
+		<div class="topbar">
+			
+
+			<span class="topbar-child1" style="color: white; font-weight: bold;">
+				Free shipping for standard order over $1599.99
+			</span>
+
+			
+
+			
+		</div>
+		<!-- Header Mobile -->
+		<div class="wrap_header_mobile">
+
+			<!-- Logo moblie -->
+			<a href="/" class="logo-mobile"style="
+								display: inline-block;
+								padding: 5px 20px;
+								border: 0px solid black;
+								border-radius: 0px;
+								color: black;
+								text-decoration: none;
+								background-color: white;
+								transition: background-color 0.3s, color 0.3s;
+							" onmouseover="this.style.backgroundColor='black'; this.style.color='white';" onmouseout="this.style.backgroundColor='white'; this.style.color='black';"><h3 style="font-weight: bold;font-size:20px;">Tech Giants</h3> </a>
+
+				<!--img src="{% static 'images/icons/logo.png' %}" alt="IMG-LOGO"-->
+			</a>
+
+
+			<!-- Button show menu -->
+			<div class="btn-show-menu">
+				<!-- Header Icon mobile -->
+				<div class="header-icons-mobile">
+					<a href="{% url 'account_signup' %}" class="header-wrapicon1 dis-block">
+						<img src="{% static 'images/icons/icon-header-01.png' %}" class="header-icon1" alt="ICON">
+					</a>
+
+					<span class="linedivide2"></span>
+
+					<div class="header-wrapicon2">
+						<a href="/orders/" class="header-wrapicon1 dis-block">
+						<img src="{% static 'images/icons/icon-header-02old.png' %}" class="header-icon1 js-show-header-dropdown" alt="ICON">
+						</a>
+					</div>
+				</div>
+
+				<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- Menu Mobile -->
+		<div class="wrap-side-menu" >
+			<nav class="side-menu">
+				<ul class="main-menu">
+
+					<!--li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
+						<div class="topbar-child2-mobile">
+							<span class="topbar-email">
+								fashe@example.com
+							</span>
+
+							<div class="topbar-language rs1-select2">
+								<select class="selection-1" name="time">
+									<option>USD</option>
+									<option>EUR</option>
+								</select>
+							</div>
+						</div>
+					</li-->
+
+					<li class="item-menu-mobile">
+						<a href="/">Home</a>
+					</li>
+
+					<li class="item-menu-mobile">
+						<a href="/shop">Shop</a>
+					</li>
+
+					{% categories_mobile %}
+
+					<li class="item-menu-mobile">
+						<a href="/contact/">Contact</a>
+					</li>
+
+					{% if request.user.is_authenticated %}
+					<li class="item-menu-mobile">
+						<a href="{% url 'core:order-summary' %}">Cart<span class="badge badge-dark">{{ request.user|cart_item_count }}</span></a>
+					</li>
+					<li class="item-menu-mobile">
+						<a href="{% url 'account_logout' %}">Logout</a>
+					</li>
+					{% else %}
+					<li class="item-menu-mobile">
+						<a href="/accounts/login/">Login</a>
+						<ul class="sub-menu">
+							<li><a href="{% url 'account_login' %}">Login</a></li>
+							<li><a href="{% url 'account_signup' %}">SignUp</a></li>
+						</ul>
+						<i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
+					</li>
+					{% endif %}
+
+				</ul>
+			</nav>
+		</div>
+	</header>

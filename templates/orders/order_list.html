@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h2 class="mb-4">Your Orders</h2>
+    {% if orders %}
+      <div class="row">
+        {% for order in orders %}
+          <div class="col-md-6 mb-4">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="mb-0">Order Ref: {{ order.ref_code }}</h5>
+              </div>
+              <div class="card-body">
+                <p class="mb-1"><strong>Ordered Date:</strong> {{ order.ordered_date }}</p>
+                <p class="mb-3"><strong>Billing Address:</strong> {{ order.billing_address.street_address }} , {{ order.billing_address.country }} , {{ order.billing_address.zip }}</p>
+                <ul class="list-group">
+                  {% for order_item in order.items.all %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      <img src="{{ order_item.item.image.url }}" class="img-fluid" style="width: 100px;">
+                      <div>
+                        <h6 class="my-0">{{ order_item.item.title }}</h6>
+                        <small class="text-muted">Quantity: {{ order_item.quantity }}</small>
+                      </div>
+                      <span class="text-muted">${{ order_item.get_final_price }}</span>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="alert alert-warning" role="alert">
+        You have no orders.
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

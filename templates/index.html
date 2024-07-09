@@ -1,0 +1,530 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load category_template_tags %}
+{% load slide_template_tags %}
+{% block content %}
+<style>
+
+.block2-labelpromotion::before,
+.block2-labelsale::before,
+.block2-labelnew::before 
+{
+  z-index: 100;
+  font-family: Montserrat-Regular;
+  font-size: 12px;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 22px;
+  border-radius: 11px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+.block2-labelsale::before {
+  background-color: white;
+  color: #000;
+  content: 'Sale';
+}
+
+.block2-labelnew::before {
+  background-color: #007bff;
+  content: 'New';
+}
+
+.block2-labelpromotion::before{
+	background-color: #000;
+	content: 'Promotion';
+	width: 70px;
+  }
+
+  .btn-dark {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+}
+
+.btn-outline-dark {
+    color: #000;
+    border-color: #000;
+}
+.newproduct {
+	background: #fff;
+	padding-top: 45px;
+	padding-bottom: 105px;
+}
+.sec-title {
+	padding-bottom: 60px;
+}
+.m-text5 {
+	font-size: 24px;
+	text-align: center;
+}
+.wrap-slick2 {
+	margin: 0 auto;
+	max-width: 1200px;
+}
+.slick2 .item-slick2 {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.block2 {
+	background: #f7f7f7;
+	border: 1px solid #ebebeb;
+	padding: 10px;
+	text-align: center;
+}
+.block2-img {
+	position: relative;
+	overflow: hidden;
+}
+.block2-img img {
+	height: 370px;
+	width: 100%;
+	object-fit: cover;
+}
+.block2-txt {
+	padding-top: 20px;
+}
+.block2-name {
+	display: block;
+	color: black;
+	padding-bottom: 5px;
+	font-size: 16px;
+}
+.block2-oldprice,
+.block2-price,
+.block2-newprice {
+	color: black;
+	margin-right: 5px;
+}
+.block2-oldprice {
+	text-decoration: line-through;
+}
+.banner2{
+	background-color: #fff;
+	margin-right: 1rem;
+	margin-left: 1rem;
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+.ban_img{
+	height: 680px;
+	width: 100%;
+}
+.ban5_img{
+	height: 580px;
+	width: 100%;
+}
+
+.btn-light {
+	color: #000;
+	background-color: #fff;
+	border-color: #fff;
+	border-radius: 20px;
+}
+.wrap-btn-slide1 a:hover{
+	background-color: whitesmoke;
+	color: #000 !important;
+	opacity: 0.7;
+
+}
+.newsletter-section {
+	background: #f8f9fa;
+	padding: 50px 20px;
+	border-radius: 8px;
+	margin: 20px 0;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.newsletter-section img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+.newsletter-form {
+	max-width: 500px;
+	margin: 0 auto;
+}
+.newsletter-form button {
+	width: 100%;
+}
+
+
+</style>
+
+
+	
+
+
+    <section>
+        <div class="pos-relative">
+            <img src="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/12/apple-mouse-pros-and-cons.jpg?q=50&fit=contain&w=1140&h=&dpr=1.5"  alt="IMG-BANNER" class="ban_img">
+            
+            <div class="ab-t-l sizefull flex-col-c-m p-l-15 p-r-15">
+                <br><br><br><br><br>
+				<br><br><br><br><br>
+				<span class="m-text9 p-t-45 fs-20-sm" style="margin-bottom: 15%;">
+					<h2> New Online Shop experience.<br></h2>
+					<br><br>
+					<h4>Discover Incredible Savings on the<br> 
+					Latest Smartphones – Your Dream Phone is Just a Click Away!<br>
+					</h4>
+				</span>
+				
+                <br>
+
+                    <div class="wrap-btn-slide1 w-size1 animated" data-appear="slideInUp">
+            
+                <a href="/shop/" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite  trans-0-4" style="margin-bottom: 200%;">
+                    Shop Now
+                </a>
+                    
+
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: darkgray;">
+		<div class="">
+			<div class="row">
+				<div class="col-sm-10 col-md-8 col-lg-6 m-l-r-auto p-t-15 p-b-15" style="padding: 3%;">
+					<div class="pos-relative" >
+						<img src="	https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/27357283304265.5d3840b368e45.jpg" alt="IMG-BANNER" class="ban_img">
+
+						<div class="ab-t-l sizefull flex-col-c-m p-l-15 p-r-15">
+							<br><br><br><br><br>
+							<br><br><br><br><br>
+							<span class="m-text9 p-t-45 fs-20-sm">
+								Bold, Brights Looks
+							</span>
+
+							<br>
+								<div class="wrap-btn-slide1 w-size1 animated" data-appear="slideInUp">
+						
+							<a href="/category/phone/" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite  trans-0-4">
+								Phones
+							</a>
+						</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-10 col-md-8 col-lg-6 m-l-r-auto p-t-15 p-b-15">
+					<div class="pos-relative" style="padding-top: 30%; padding-left: 10%;">
+						<h2 style="color: white;">
+                            Discover Incredible Savings on the Latest Smartphones – Your Dream Phone is Just a Click Away!
+                        </h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+    <section style="background-color: antiquewhite;">
+		<div class="">
+			<div class="row">
+                <div class="col-sm-10 col-md-8 col-lg-6 m-l-r-auto p-t-15 p-b-15">
+					<div class="pos-relative" style="padding-top: 30%; padding-left: 10%;">
+						<h2 style="color: black;">
+                            Unlock Unmatched Savings on Top-Rated Laptops – Elevate Your Productivity and Entertainment Today!
+                        </h2>
+					</div>
+				</div>
+				<div class="col-sm-10 col-md-8 col-lg-6 m-l-r-auto p-t-15 p-b-15" style="padding: 3%;">
+					<div class="pos-relative" >
+						<img src="https://thumbs.dreamstime.com/b/sale-23424352.jpg" alt="IMG-BANNER" class="ban_img">
+
+						<div class="ab-t-l sizefull flex-col-c-m p-l-15 p-r-15">
+							<br><br><br><br><br>
+							<br><br><br><br><br>
+							<span class="m-text9 p-t-45 fs-20-sm">
+								Bold, Brights Looks
+							</span>
+
+							<br>
+							
+
+								<div class="wrap-btn-slide1 w-size1 animated" data-appear="slideInUp">
+						
+							<a href="/category/laptop/" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite  trans-0-4">
+								Laptops
+							</a>
+						</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+    <section class="newproduct bgwhite p-t-45 p-b-105">
+        <div class="container">
+            <div class="sec-title p-b-60">
+                <h3 class="m-text5 t-center">
+                    Featured Products
+                </h3>
+            </div>
+
+				<div class="wrap-slick2">
+					<div class="slick2">
+						<div class="item-slick2 p-l-15 p-r-15">
+							<div class="block2">
+								<div class="block2-img wrap-pic-w of-hidden pos-relative block2-label">
+									<a href="product/apple-iphone-15-128gb/">
+										<img src="https://xmobile.lk/wp-content/uploads/2023/09/Apple-iPhone-15-4.png" alt="IMG-PRODUCT">
+									</a>
+								</div>
+								<div class="block2-txt p-t-20">
+									<a href="product/apple-iphone-15-128gb/" class="block2-name dis-block s-text3 p-b-5">
+										Apple - iPhone 15
+									</a>
+									<span class="block2-oldprice m-text7 p-r-5">
+										$949.99
+									</span>
+									<span class="block2-newprice m-text8 p-r-5">
+										$851.07
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="item-slick2 p-l-15 p-r-15">
+							<div class="block2">
+								<div class="block2-img wrap-pic-w of-hidden pos-relative block2-label">
+									<a href="product/apple-iphone-14/">
+										<img src="https://sumerlabs.com/sumer-app-90b8f.appspot.com/product_photos%2Fc694c8d35066c07d4b29662e5acf3078%2Fe1d836a0-c1b8-11ed-a619-6d01b9f4300b?alt=media&token=b2fdfb8f-4a46-439c-8826-30c6e28bab8a" alt="IMG-PRODUCT">
+									</a>
+								</div>
+								<div class="block2-txt p-t-20">
+									<a href="product/apple-iphone-14/" class="block2-name dis-block s-text3 p-b-5">
+										Iphone 14
+									</a>
+									<span class="block2-oldprice m-text7 p-r-5">
+										$749.99
+									</span>
+									<span class="block2-newprice m-text8 p-r-5">
+										$704.04
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="item-slick2 p-l-15 p-r-15">
+							<div class="block2">
+								<div class="block2-img wrap-pic-w of-hidden pos-relative block2-label">
+									<a href="product/apple-iphone-14-pro/">
+										<img src="https://9to5mac.com/wp-content/uploads/sites/6/2022/09/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-space-black-220907_inline.jpg.medium_2x.jpg?quality=82&strip=all" alt="IMG-PRODUCT">
+									</a>
+								</div>
+								<div class="block2-txt p-t-20">
+									<a href="product/apple-iphone-14-pro/" class="block2-name dis-block s-text3 p-b-5">
+										Apple Iphone 14 Pro
+									</a>
+									<span class="block2-newprice m-text8 p-r-5">
+										$1319.50
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="item-slick2 p-l-15 p-r-15">
+							<div class="block2">
+								<div class="block2-img wrap-pic-w of-hidden pos-relative block2-label">
+									<a href="product/samsung-s-24-ultra/">
+										<img src="https://ee.co.uk/medias/samsung-galaxy-s24-ultra-5g-256gb-titanium-grey-desktop-detail-3-WebP-Format-488?context=bWFzdGVyfHJvb3R8Njc4NHxpbWFnZS93ZWJwfHN5cy1tYXN0ZXIvcm9vdC9oNTIvaDAwLzEwMTI1MTIwMDEyMzE4L3NhbXN1bmctZ2FsYXh5LXMyNC11bHRyYS01Zy0yNTZnYi10aXRhbml1bS1ncmV5LWRlc2t0b3AtZGV0YWlsLTNfV2ViUC1Gb3JtYXQtNDg4fDQ5Y2MzM2M2ZGRlNzFlOTMxMzE3OWFlNjFlZTVhYzQ2ZWEwZGZjZGE0YjUyOGYyMzc1MWI3NWQ5YzM5NTc2OGE" alt="IMG-PRODUCT">
+									</a>
+								</div>
+								<div class="block2-txt p-t-20">
+									<a href="product/samsung-s-24-ultra/" class="block2-name dis-block s-text3 p-b-5">
+										Samsung S 24 Ultra
+									</a>
+									<span class="block2-newprice m-text8 p-r-5">
+										$979.11
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="item-slick2 p-l-15 p-r-15">
+							<div class="block2">
+								<div class="block2-img wrap-pic-w of-hidden pos-relative block2-label">
+									<a href="product/google-pixel-8-pro/">
+										<img src="https://celltronics.lk/wp-content/uploads/2023/10/Google-Pixel-8-Pro-2.jpg" alt="IMG-PRODUCT">
+									</a>
+								</div>
+								<div class="block2-txt p-t-20">
+									<a href="product/google-pixel-8-pro/" class="block2-name dis-block s-text3 p-b-5">
+										Google-Pixel-8-Pro
+									</a>
+									<span class="block2-newprice m-text8 p-r-5">
+										$815.38
+									</span>
+								</div>
+							</div>
+						</div>
+						<!-- End Example product item -->
+						<!-- Add more product items as needed -->
+					</div>
+                </div>
+        </div>
+    </section>
+
+    <script>
+        $(document).ready(function(){
+            $('.slick2').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                dots: true,
+                arrows: false,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+	<section>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+		<div style="background-color: rgb(5, 5, 5); padding: 2%;">
+			<div class="container" style="padding: 2%;">
+				<!-- Newsletter Signup Form -->
+				<div class="newsletter-section" style="background-color: rgb(0, 0, 0); padding: 2%;">
+					<div class="row align-items-center">
+						<div class="col-md-6 text-center text-md-left" style="color: white;">
+							<h2>Subscribe to Our Newsletter For Weekly Article Update.</h2>
+							<p>Join our community and never miss an update. Subscribe now to receive the latest articles, insights, and exclusive content directly to your inbox every week. Our newsletters are carefully curated to bring you the most relevant and interesting topics, without any unnecessary fluff.</p>
+						</div>
+						<div class="col-md-6 ">
+							<h4 style="color: white;">Subscribe</h4>
+							<p style="color: white;">Enter your email below to be the first to know about new collections.</p>
+							<form id="newsletterForm" method="post" action="{% url 'core:home' %}" class="newsletter-form">
+								{% csrf_token %}
+								<div class="input-group mb-3">
+									<input type="email" class="form-control" name="email" placeholder="Your Email" aria-label="Your Email" required>
+									<div class="input-group-append">
+										<button class="btn btn-primary" type="submit">→</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+			<!-- Modal -->
+			<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="successModalLabel">Newsletter Signup Successful</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							Thank you for signing up! You have successfully subscribed to our newsletter.
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+			<!-- Bootstrap JS and dependencies -->
+			<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	
+			<!-- Custom JS to trigger modal -->
+			<script type="text/javascript">
+				$(document).ready(function() {
+					$('#newsletterForm').submit(function(event) {
+						event.preventDefault(); // Prevent form from submitting normally
+	
+						// Perform AJAX request or any other form submission handling here
+						// Assuming it was successful, show the success modal
+						$('#successModal').modal('show');
+					});
+				});
+			</script>
+		</div>
+	</section>
+	
+	
+
+	
+    <div>
+        <div>
+            <!--img src="https://static.vecteezy.com/system/resources/previews/002/294/859/original/flash-sale-web-banner-design-e-commerce-online-shopping-header-or-footer-banner-free-vector.jpg"  alt="IMG-BANNER" style="width: 100%;"-->
+        </div>
+    </div>
+
+
+	<!-- Shipping -->
+	<!--section class="shipping bgwhite p-t-62 p-b-46">
+		<div class="flex-w p-l-15 p-r-15">
+			<div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 respon1">
+				<h4 class="m-text12 t-center">
+					Free Delivery Worldwide
+				</h4>
+
+				<a href="#" class="s-text11 t-center">
+					Click here for more info
+				</a>
+			</div>
+
+			<div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 bo2 respon2">
+				<h4 class="m-text12 t-center">
+					30 Days Return
+				</h4>
+
+				<span class="s-text11 t-center">
+					Simply return it within 30 days for an exchange.
+				</span>
+			</div>
+
+			<div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 respon1">
+				<h4 class="m-text12 t-center">
+					Store Opening
+				</h4>
+
+				<span class="s-text11 t-center">
+					Shop open from Monday to Sunday
+				</span>
+			</div>
+		</div>
+	</section-->
+
+	<div>
+        <div>
+            <img src="{% static 'images\new 2024-07-05 055853.png' %}"  alt="IMG-BANNER" style="width: 100%;">
+        </div>
+    </div>
+
+
+	{% endblock content %}
+	
